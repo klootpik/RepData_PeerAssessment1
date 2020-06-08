@@ -123,11 +123,7 @@ DT_Activity[!is.na(steps), .(StepsPerDay = sum(steps)), date]
 
 
 ```r
-ggplot(DT_Activity[!is.na(steps), .(StepsPerDay = sum(steps)), date], aes(x=StepsPerDay)) + geom_histogram()
-```
-
-```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+ggplot(DT_Activity[!is.na(steps), .(StepsPerDay = sum(steps)), date], aes(x=StepsPerDay)) + geom_histogram(bins = 10)
 ```
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
@@ -228,11 +224,7 @@ DT_Activity[steps!=steps_original]
    imputing missing data on the estimates of the total daily number of steps?
 
 ```r
-ggplot(DT_Activity[, .(StepsPerDay = sum(steps)), date], aes(x=StepsPerDay)) + geom_histogram()
-```
-
-```
-## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+ggplot(DT_Activity[, .(StepsPerDay = sum(steps)), date], aes(x=StepsPerDay)) + geom_histogram(bins = 10)
 ```
 
 ![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png)
@@ -354,11 +346,3 @@ xyplot(NumberOfSteps ~ interval | SortOfDay, data = StepsPerIntervalSortOfDay, l
 ```
 
 ![plot of chunk unnamed-chunk-20](figure/unnamed-chunk-20-1.png)
-
-```r
-knit2html()
-```
-
-```
-## Error in read_utf8(input): argument "input" is missing, with no default
-```

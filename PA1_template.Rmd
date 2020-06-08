@@ -63,7 +63,7 @@ DT_Activity[!is.na(steps), .(StepsPerDay = sum(steps)), date]
   between them. Make a histogram of the total number of steps taken each day
 
 ```{r}
-ggplot(DT_Activity[!is.na(steps), .(StepsPerDay = sum(steps)), date], aes(x=StepsPerDay)) + geom_histogram()
+ggplot(DT_Activity[!is.na(steps), .(StepsPerDay = sum(steps)), date], aes(x=StepsPerDay)) + geom_histogram(bins = 10)
 ```
 
  3) Calculate and report the mean and median of the total number of steps taken per day
@@ -133,7 +133,7 @@ DT_Activity[steps!=steps_original]
    the estimates from the first part of the assignment? What is the impact of 
    imputing missing data on the estimates of the total daily number of steps?
 ```{r}
-ggplot(DT_Activity[, .(StepsPerDay = sum(steps)), date], aes(x=StepsPerDay)) + geom_histogram()
+ggplot(DT_Activity[, .(StepsPerDay = sum(steps)), date], aes(x=StepsPerDay)) + geom_histogram(bins = 10)
 
 ```
 
